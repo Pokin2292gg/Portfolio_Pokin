@@ -1,0 +1,329 @@
+/* ====== Global ====== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0d0221 0%, #1a0033 100%);
+  background-attachment: fixed;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0.5em 0;
+}
+
+.highlight {
+  color: #c778ff;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #12002f;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c778ff;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #c778ff;
+}
+
+/* ====== Intro Section ====== */
+.intro {
+  text-align: center;
+  padding: 80px 20px;
+  background: transparent; /* ให้เห็น background ที่อยู่ข้างหลัง */
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #c778ff77;
+  margin-bottom: 20px;
+}
+
+.bio {
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* ====== Experience Section ====== */
+.experience {
+  padding: 80px 20px;
+  background: transparent;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #1f0a40;
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 250px;
+  box-shadow: 0 0 16px #c778ff55;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card button {
+  margin-top: 10px;
+  background: #c778ff;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card button:hover {
+  background-color: #a858f2;
+}
+
+/* ====== Single Card (Intern) ====== */
+.single-card {
+  background: #1f0a40;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 16px #c778ff55;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.single-card h3 {
+  margin-bottom: 10px;
+  color: #c778ff;
+}
+
+.single-card p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* ====== Skills Section ====== */
+.skills {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.skills .description {
+  color: #ccc;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* ====== Projects Section ====== */
+.projects {
+  padding: 80px 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.project-row {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.project-row:nth-child(even) .project {
+  flex-direction: row-reverse;
+}
+
+.project img {
+  flex: 0 0 45%;
+  max-width: 450px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #c778ff66;
+}
+
+.project .desc {
+  flex: 1;
+  text-align: left;
+  color: #ddd;
+}
+
+/* ====== Responsive (มือถือ) ====== */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+  .project-row:nth-child(even) .project {
+    flex-direction: column;
+  }
+  .project img,
+  .project .desc {
+    width: 100%;
+  }
+  .project .desc {
+    text-align: center;
+  }
+}
+
+/* ====== Footer ====== */
+.contact {
+  background: #0d0221;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.contact p {
+  margin: 10px 0;
+  color: #aaa;
+}
+
+.socials {
+  margin-top: 10px;
+  color: #999;
+}
+
+/* ====== Mouse Glow ====== */
+.mouse-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(199,120,255,0.4), transparent 70%);
+  mix-blend-mode: lighten;
+  z-index: 9999;
+  transition: transform 0.05s ease, opacity 0.2s ease;
+}
+.skills-grid.tight {
+  display: flex;
+  justify-content: center;  /* จัดกลาง */
+  align-items: center;
+  gap: 0px;                 /* ไม่มีช่องว่างระหว่างการ์ด */
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: #0f0a1f;
+  border: 1px solid rgba(199, 120, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  width: 140px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(199, 120, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:not(:last-child) {
+  margin-right: 10px; /* เพิ่มระยะเฉพาะการ์ดก่อนสุดท้าย */
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(199, 120, 255, 0.3);
+}
+
+.skill-card img {
+  width: auto;
+  height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+}
+
+.skill-card p {
+  margin: 0;
+  color: #ffffffcc;
+  font-size: 0.95rem;
+}
+.skills-section {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 40px 0;
+}
+
+.section-title {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #1a0033;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(199, 120, 255, 0.15);
+  font-size: 1.4rem;
+}
+
+
+/* Animation Slide */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+body {
+  position: relative;
+  z-index: 1;
+}
+
+
